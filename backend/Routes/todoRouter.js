@@ -15,7 +15,8 @@ router.post("/login", signInUser);
 router.post("/addTask", addTask);
 router.put("/updateTask/:id", updateTask);
 router.delete("deleteTask/:id", deleteTask);
-router.get("/getTasks", getTasks);
+router.get("/getTasks/:id", getTasks);
+
 
 router.get("/fetchUserById/:id", fetchUserById);
 
