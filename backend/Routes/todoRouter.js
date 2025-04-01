@@ -14,7 +14,7 @@ router.post("/signup", registerUser);
 router.post("/login", signInUser);
 router.post("/addTask", addTask);
 router.put("/updateTask/:id", updateTask);
-router.delete("deleteTask/:id", deleteTask);
+router.delete("/deleteTask/:id", deleteTask);
 router.get("/getTasks/:id", getTasks);
 
 
