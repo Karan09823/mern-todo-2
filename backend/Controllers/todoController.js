@@ -133,19 +133,17 @@ const deleteTask = async (req, res) => {
 // Get Task List
 const getTasks = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id } = req.params; // Get user ID from request params
     if (!mongoose.Types.ObjectId.isValid(id))
       return res.status(404).json({ message: "Invalid user ID" });
 
     const list = await List.find({ user: id }).sort({ createdAt: -1 });
-    if (list.length === 0)
-      return res.status(204).json({ message: "Empty task list" });
-
     res.status(200).json({ list });
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
 
 module.exports = {
   registerUser,
